@@ -1,4 +1,5 @@
 <?php 
+
 abstract class PayrollService
 {
     abstract public function salary(Employee $employee);
