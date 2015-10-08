@@ -1,10 +1,13 @@
 <?php 
 
-class ContractPayrollService
+class RegularPayrollService
 {
     public function salary(Employee $employee)
     {
-        return $employee->salary->base() - $this->loanService($employee);
+        return $employee->salary->base() - 
+                $this->loanService($employee) -
+                $this->igssService($employee) - 
+                $this->isrService($employee);
     }
 
     public function payroll()
