@@ -5,8 +5,8 @@ class PostController extends BaseController
     private function isAuthorized()
     {
         if (Auth::guest()) {
-            throw new Exception('Unauthorize exception');
-            Log::info('Forbbiden: Unauthorized user');
+            throw new UnauthorizedAccessException;
+            Log::info('Unauthorized User');
         }
     }
 

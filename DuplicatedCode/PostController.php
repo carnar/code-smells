@@ -5,9 +5,9 @@ class PostController extends BaseController
     public function store($data)
     {
         if (Auth::guest()) {
-            throw new Exception('Unauthorize exception');
+            throw new UnauthorizedAccessException;
 
-            Log::info('Forbbiden: Unauthorized user');
+            Log::info('Unauthorized User');
         }
         
         $this->repository->save($data);
@@ -16,9 +16,9 @@ class PostController extends BaseController
     public function delete($id)
     {
         if (Auth::guest()) {
-            throw new Exception('Unauthorize exception');
+            throw new UnauthorizedAccessException;
             
-            Log::info('Forbbiden: Unauthorized user');
+            Log::info('Unauthorized User');
         }
 
         $this->respository->delete($id);
