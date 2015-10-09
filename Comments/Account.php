@@ -13,7 +13,9 @@ class Account
 
         // deduct amount from balance
         $this->balance -= $amount;
-        
+
+        // $transaction = $this->recordTransaction($amount)
+
         // record transaction
         $transaction = $this->transactions->add(new Transaction(true, $amount));
         
