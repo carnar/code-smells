@@ -1,6 +1,9 @@
 <?php 
 class Account
 {
+    /**
+     * @author carnar <cnarez@clasificados.com>
+     */
     public function debit($amount) 
     {    
         // check amount does not exceed max allowed
